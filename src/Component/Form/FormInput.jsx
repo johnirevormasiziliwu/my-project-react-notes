@@ -7,6 +7,7 @@ class FormInput extends React.Component {
     this.state = {
       title: "",
       body: "",
+      maxLength: '50'
     };
 
     this.onTitleChangeEventHandler = this.onTitleChangeEventHandler.bind(this);
@@ -37,7 +38,7 @@ class FormInput extends React.Component {
 
   render() {
     const { title } = this.state;
-    const maxLength = 50;
+    
     return (
       <div className="notes-form-input mt-3 px-5  ">
         <h1 className="text-center py-3 text-2xl font-semibold">
@@ -52,7 +53,7 @@ class FormInput extends React.Component {
                   Judul Catatan
                 </label>
                 <p className="text-sm text-gray-500 mt-2 text-center">
-                  Sisa karakter: {title.length}/{maxLength}
+                  Sisa karakter: {title.length}/{this.state.maxLength}
                 </p>
               </div>
               <input
@@ -63,7 +64,7 @@ class FormInput extends React.Component {
                 onChange={this.onTitleChangeEventHandler}
                 className="w-full bg-white rounded-md border  font-bold border-gray-300 shadow mt-1 h-10 focus:outline-none focus:border-none px-3"
                 placeholder="Tuliskan title notes disini..."
-                maxLength={maxLength}
+                maxLength={this.state.maxLength}
               />
             </div>
             <div className="mb-3">
