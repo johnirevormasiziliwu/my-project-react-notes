@@ -5,12 +5,9 @@ import NotesItem from "./NotesItem";
 
 function NotesList({ title, notes, onDelete, onArsip }) {
   const handleArsip = (noteId) => {
-    // Implement your logic to move the note to the archive
-    // For example, you can filter out the note with the given id
-    // from the active notes and add it to the archive.
+    
     const updatedNotes = notes.filter((note) => note.id !== noteId);
-    // Perform the archiving logic, for example, by updating state.
-    // You may have a function in your parent component to handle this.
+   
     onArsip(noteId, updatedNotes);
   };
 
@@ -26,7 +23,7 @@ function NotesList({ title, notes, onDelete, onArsip }) {
               key={note.id}
               id={note.id}
               onDelete={onDelete}
-              onArsip={handleArsip} // Pass the handleArsip function to NotesItem
+              onArsip={handleArsip} 
               {...note}
             />
           ))
