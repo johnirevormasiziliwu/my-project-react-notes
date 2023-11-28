@@ -11,9 +11,9 @@ function NotesItem({ title, createAt, body, id, onDelete, onArsip, archived }) {
   };
 
   return (
-    <div className='notes-item  mb-10 '>
+    <div className='notes-item  mb-10 relative '>
       <NotesItemBody title={title} createAt={createAt} body={body} />
-      <div className="flex justify-between mt-[-12px]">
+      <div className="flex justify-between mt-[-12px] ">
         <DeleteButton id={id} onDelete={onDelete} />
         <ArsipButton archived={archived} onArsipClick={handleArsipClick} />
       </div>

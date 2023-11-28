@@ -5,32 +5,32 @@ import NotesItem from "./NotesItem";
 
 function NotesList({ title, notes, onDelete, onArsip }) {
   const handleArsip = (noteId) => {
-    
     const updatedNotes = notes.filter((note) => note.id !== noteId);
-   
+
     onArsip(noteId, updatedNotes);
   };
 
   return (
-    <div className="notes-list my-5">
-      <h1 className="note-list__title md:text-start text-center md:ml-[50px] ml-4 my-5 text-2xl font-semibold">
-        {title}
-      </h1>
-      <div className="flex flex-wrap justify-around w-full">
-        {notes.length > 0 ? (
-          notes.map((note) => (
-            <NotesItem
-              key={note.id}
-              id={note.id}
-              onDelete={onDelete}
-              onArsip={handleArsip} 
-              {...note}
-            />
-          ))
-        ) : (
-          <p>Tidak Ada Catatan</p>
-        )}
-      </div>
+    <div className="p-5">
+      <h1 className="text-2xl font-semibold py-5 text-center md:text-start">{title}</h1>
+      <div className="md:grid grid-cols-4 gap-4">
+  {notes.length > 0 ? (
+    notes.map((note) => (
+      <NotesItem
+        key={note.id}
+        id={note.id}
+        onDelete={onDelete}
+        onArsip={handleArsip}
+        {...note}
+      />
+    ))
+  ) : (
+    <div className="col-span-4 flex items-center justify-center">
+      <p className="text-center">Tidak Ada Catatan</p>
+    </div>
+  )}
+</div>
+
     </div>
   );
 }

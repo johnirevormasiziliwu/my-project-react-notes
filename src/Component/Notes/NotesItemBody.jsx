@@ -1,13 +1,16 @@
 import React from "react";
 
-function NotesItemBody({  title, createAt, body }) {
+function NotesItemBody({ title, createAt, body }) {
   return (
-    <div className="body-item__body flex justify-center    ">
-      
-      <div className="lg:w-[400px]  sm:w-[400px] md:w-[400px] md:h-52 w-[350px]  my-3 border-2 border-orange-600 md:p-3 p-3  rounded-t-md  ">
-      <h3 className="body-item__title text-lg font-semibold py-0">{title}</h3>
-      <span className="body-item__createat text-zinc-400 text-sm">{createAt}</span>
-      <p className="body-item__body font-normal">{body}</p>
+    <div className="notes-item__body h-80 w-full border-2 relative border-orange-600 rounded-md bg-white shadow p-3">
+      <h1 className="text-xl font-semibold py-1 w-full">{title}</h1>
+      <h5 className="text-gray-600 font-normal">{createAt}</h5>
+      <p className="text-justify py-1">{body}</p>
+      <div>
+        
+        <hr className="border  border-orange-600 w-full absolute left-0 top-64 " />
+        
+        <hr className="border border-orange-600  absolute left-1/2 top-64  h-[62px] " />
       </div>
     </div>
   );
